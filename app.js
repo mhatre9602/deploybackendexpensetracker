@@ -27,7 +27,11 @@ app.use("/user", userRoutes);
 app.use("/expense", expenseRoutes);
 app.use("/purchase", purchaseRoutes);
 app.use("/premium", premiumFeatureRoutes);
-
+app.get("/", (req, res) => {
+  res.send({
+    message: "Welcome",
+  });
+});
 User.hasMany(Expense);
 Expense.belongsTo(User);
 
